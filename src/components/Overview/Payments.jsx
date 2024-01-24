@@ -67,72 +67,65 @@ const Payments = () => {
     ];
 
     return (
-      <div>
-        <p className="mr-0 ml-0 mb-[10px] w-[40px] 1100px:mr-[10px] 1100px:ml-auto 1100px:mb-0">
-          Show
-        </p>
+      <div className="flex gap-[1rem] items-center relative">
+        <p>Show</p>
         <div
-          className="w-[150px] relative h-[35px]"
+          className="w-[10rem] flex items-center justify-between text-[#414042] text-[0.8rem] cursor-pointer py-[0.4rem] px-[0.6rem] border-[1px] border-[#ced0da] rounded-[2px]"
           onClick={() => handleDropdown()}
         >
-          <p className="w-full h-full py-[8px] px-[16px] bg-transparent border-[1px] border-[#DDE0E3] text-left rounded-[2px] flex items-center justify-between cursor-pointer">
-            {payment}
-            <MdKeyboardArrowDown size={15} color="primary" />
-          </p>
-
-          <ul
-            className={`w-full bg-white shadow-sm absolute z-2 rounded-bl-[6px] rounded-br-[6px] top-0 right-0 transition-all ${
-              dropdownOpen
-                ? "visible pointer-events-all opacity-1 top-[35px]"
-                : ""
-            }`}
-          >
-            {selections.map((item) => (
-              <li
-                onClick={() => {
-                  setPayment(item);
-                }}
-                className="w-full"
-              >
-                <button className="bg-transparent py-[8px] px-[16px] border-0 w-full text-left text-[#414042] hover:bg-[#f4f4f4]">
-                  {item}
-                </button>
-              </li>
-            ))}
-          </ul>
+          <p>{payment}</p>
+          <MdKeyboardArrowDown color="primary" />
         </div>
+        <ul
+          className={`absolute right-0 top-[2.3rem] list-none  invisible bg-white rounded-[8px] shadow-sm ${
+            open ? "visible" : ""
+          }`}
+        >
+          {selections.map((item) => (
+            <li
+              onClick={() => {
+                setPayment(item);
+              }}
+              className="w-[10rem] p-[0.5rem] pl-[1rem] text-[0.9rem] text-[#414042] cursor-pointer hover:bg-[#f4f4f4]"
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
       </div>
     );
   };
   return (
     <div className="w-full mt-[2rem]">
       <h2 className="text-[2rem] m-0 font-normal">Payments</h2>
-      <div className="w-full my-[1rem] text-[0.9rem] flex flex-col 1100px:flex-row items-start 1100px:items-center pr-[100px] text-[#262626]">
-        <span className="w-[65px] mr-0 1100px:mr-[10px] mb-[10px] 1100px:mb-0">
-          Showing{" "}
-        </span>
-        <span className="w-[40px] flex items-center justify-center gap-1 mr-0 mb-[10px] 1100px:mb-0 1100px:mr-[13px]">
-          <span>20</span> <MdKeyboardArrowDown />
-        </span>
-        <span className="w-[180px] mr-0 mb-[10px] 1100px:mr-[10px] 1100px:mb-0">
-          out of 500 payments
-        </span>
-        <div className="1100px:w-[350px] relative border-b-[1px] border-[#DDE0E3] pb-[7px] h-[25px] mb-[10px] 1100px:mb-0 w-full mr-0 1100px:mr-[20px] flex gap-0.5">
-          <label className="cursor-pointer flex items-center justify-center">
-            <CiSearch size={15} />
-          </label>
-          <input
-            type="text"
-            name="search"
-            id="payments-search"
-            placeholder="Search payments"
-            autoComplete="off"
-            className="border-0 px-[20px] bg-transparent rounded-none placeholder:text-[#787878]"
-          />
+      <div className="w-full flex items-center justify-between">
+        <div className=" my-[1rem] text-[0.9rem] flex flex-col 1100px:flex-row items-start 1100px:items-center pr-[100px] text-[#262626]">
+          <span className="w-[65px] mr-0 1100px:mr-[10px] mb-[10px] 1100px:mb-0">
+            Showing{" "}
+          </span>
+          <span className="w-[40px] flex items-center justify-center gap-1 mr-0 mb-[10px] 1100px:mb-0 1100px:mr-[13px]">
+            <span>20</span> <MdKeyboardArrowDown />
+          </span>
+          <span className="w-[180px] mr-0 mb-[10px] 1100px:mr-[10px] 1100px:mb-0">
+            out of 500 payments
+          </span>
+          <div className="1100px:w-[350px] relative border-b-[1px] border-[#DDE0E3] pb-[7px] h-[25px] mb-[10px] 1100px:mb-0 w-full mr-0 1100px:mr-[20px] flex gap-0.5">
+            <label className="cursor-pointer flex items-center justify-center">
+              <CiSearch size={15} />
+            </label>
+            <input
+              type="text"
+              name="search"
+              id="payments-search"
+              placeholder="Search payments"
+              autoComplete="off"
+              className="border-0 px-[20px] bg-transparent rounded-none placeholder:text-[#787878]"
+            />
+          </div>
         </div>
         <PaymentSelection />
       </div>
-      <div className="table_wrap">
+      <div className="overflow-x-scroll 770px:w-full 770px:overflow-x-none">
         {" "}
         <div className="payment_table">
           <div className="header">
