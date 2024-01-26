@@ -7,15 +7,13 @@ import DashboardHero from "../components/DashboardHero.jsx";
 const DashboardPage = () => {
 
   return (
-    <div className="dashboard">
+    <div className="flex flex-col h-[100vh] w-[100vw] overflow-hidden">
       <DashboardHeader />
-      <div className="flex justify-between w-full">
+      <div className="flex flex-1">
         
           <DashboardSideBar />
         
-        <div className="w-full justify-center flex">
-          <DashboardHero />
-        </div>
+         <DashboardHero />
       </div>
     </div>
   );

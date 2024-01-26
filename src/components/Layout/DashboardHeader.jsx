@@ -17,45 +17,48 @@ const DashboardHeader = () => {
 
   return (
     <>
-      <div className="hidden 1100px:flex justify-between items-center 1100px:width-[100%] 1100px:p-3 1100px:text-[#647787] 1100px:bg-white z-10">
-        <div className="flex items-center justify-center gap-10">
-          <h2
-            className="font-bold font-primary text-lg leading-9 tracking-
+      <div className="hidden 1100px:block 1100px:bg-white z-10 1100px:w-full">
+        <div className="flex justify-between items-center  p-3 text-[#647787]">
+          {" "}
+          <div className="flex items-center justify-center gap-10">
+            <h2
+              className="font-bold font-primary text-lg leading-9 tracking-
         tight sm:text-3xl sm:leading-10 md:text-5
         lg:text-6 xl:text-6 text-[#1875F0]"
-          >
-            TransMonitor
-          </h2>
-          <div className="flex items-center justify-start">
-            <CiSearch />
-            <input
-              type="text"
-              placeholder="Search..."
-              value={searchTerm}
-              onChange={handleSearchChange}
-              className="h-[50px] w-full px-5"
-            />
-          </div>
-        </div>
-        <div className="flex items-center justify-between gap-10 mr-20">
-          <div>Support</div>
-          <div>FAQ</div>
-          <div className="relative cursor-pointer mr-[15px]">
-            <CiBellOn size={30} />
-            <span className="absolute right-0 top-0 rounded-full bg-[#1875F0] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
-              8
-            </span>
-          </div>
-          <div className="flex items-center justify-center gap-3">
-            <div className="flex flex-col items-start justify-start">
-              <span>Hello</span>
-              <span>Oluwaleke Ojo</span>
+            >
+              TransMonitor
+            </h2>
+            <div className="flex items-center justify-start ml-10">
+              <CiSearch />
+              <input
+                type="text"
+                placeholder="Search..."
+                value={searchTerm}
+                onChange={handleSearchChange}
+                className="h-[50px] w-full px-5"
+              />
             </div>
-            <img
-              src={ProfileImage}
-              alt="avatar"
-              className="w-[30px] rounded-[50%]"
-            />
+          </div>
+          <div className="flex items-center justify-between gap-10 mr-20">
+            <div>Support</div>
+            <div>FAQ</div>
+            <div className="relative cursor-pointer mr-[15px]">
+              <CiBellOn size={30} />
+              <span className="absolute right-0 top-0 rounded-full bg-[#1875F0] w-4 h-4 top right p-0 m-0 text-white font-mono text-[12px] leading-tight text-center">
+                8
+              </span>
+            </div>
+            <div className="flex items-center justify-center gap-3">
+              <div className="flex flex-col items-start justify-start">
+                <span>Hello</span>
+                <span>Oluwaleke Ojo</span>
+              </div>
+              <img
+                src={ProfileImage}
+                alt="avatar"
+                className="w-[30px] rounded-[50%]"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -130,7 +133,9 @@ const DashboardHeader = () => {
                       <li
                         onClick={() => setActive(item.name)}
                         className={`p-[0.7rem] pl-[3rem] w-full flex items-center gap-[1rem] cursor-pointer hover:text-[#1875f0] ${
-                          active === item.name ? "bg-[#1875f0]/10 text-[#1875f0] border-l-8 border-[#1875f0]" : ""
+                          active === item.name
+                            ? "bg-[#1875f0]/10 text-[#1875f0] border-l-8 border-[#1875f0]"
+                            : ""
                         }`}
                       >
                         {item.icon}
@@ -146,7 +151,9 @@ const DashboardHeader = () => {
                       <li
                         onClick={() => setActive(item.name)}
                         className={`p-[0.7rem] pl-[3rem] w-full flex items-center gap-[1rem] cursor-pointer hover:text-[#1875f0] ${
-                          active === item.name ? "bg-[#1875f0]/10 text-[#1875f0] border-l-8 border-[#1875f0]" : ""
+                          active === item.name
+                            ? "bg-[#1875f0]/10 text-[#1875f0] border-l-8 border-[#1875f0]"
+                            : ""
                         }`}
                       >
                         {item.icon}
@@ -154,14 +161,17 @@ const DashboardHeader = () => {
                       </li>
                     ))}
                   </ul>
-                </div><div className="my-[0.8rem] mx-0">
+                </div>
+                <div className="my-[0.8rem] mx-0">
                   <h3 className="text-[1rem] mb-[7px] pl-[3rem]">Order</h3>
                   <ul>
                     {orderItem.map((item) => (
                       <li
                         onClick={() => setActive(item.name)}
                         className={`p-[0.7rem] pl-[3rem] w-full flex items-center gap-[1rem] cursor-pointer hover:text-[#1875f0] ${
-                          active === item.name ? "bg-[#1875f0]/10 text-[#1875f0] border-l-8 border-[#1875f0]" : ""
+                          active === item.name
+                            ? "bg-[#1875f0]/10 text-[#1875f0] border-l-8 border-[#1875f0]"
+                            : ""
                         }`}
                       >
                         {item.icon}
@@ -169,14 +179,17 @@ const DashboardHeader = () => {
                       </li>
                     ))}
                   </ul>
-                </div><div className="my-[0.8rem] mx-0">
+                </div>
+                <div className="my-[0.8rem] mx-0">
                   <h3 className="text-[1rem] mb-[7px] pl-[3rem]"></h3>
                   <ul>
                     {profileItem.map((item) => (
                       <li
                         onClick={() => setActive(item.name)}
                         className={`p-[0.7rem] pl-[3rem] w-full flex items-center gap-[1rem] cursor-pointer hover:text-[#1875f0] ${
-                          active === item.name ? "bg-[#1875f0]/10 text-[#1875f0] border-l-8 border-[#1875f0]" : ""
+                          active === item.name
+                            ? "bg-[#1875f0]/10 text-[#1875f0] border-l-8 border-[#1875f0]"
+                            : ""
                         }`}
                       >
                         {item.icon}

@@ -5,7 +5,7 @@ import Payments from "../components/Overview/Payments.jsx"
 
 const DashboardHero = () => {
   return (
-    <div className="w-[100%] p-[1rem]">
+    <div className="w-full flex-1 bg-[#f7f8fa] p-[1rem] hero">
       <Transactions />
       <Charts />
       <Payments />
