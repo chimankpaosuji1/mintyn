@@ -181,7 +181,6 @@ const DashboardHeader = () => {
                   </ul>
                 </div>
                 <div className="my-[0.8rem] mx-0">
-                  <h3 className="text-[1rem] mb-[7px] pl-[3rem]"></h3>
                   <ul>
                     {profileItem.map((item) => (
                       <li
